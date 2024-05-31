@@ -1,0 +1,7 @@
+name: Pulumi-Cloudflare
+runtime: nodejs
+description: Testing Cloudflare and pulumi
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: typescript
