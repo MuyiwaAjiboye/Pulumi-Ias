@@ -45,18 +45,26 @@ This would connect the api key to pulumi. You can confirm the connection by goin
 Now we are done with that its time to create our first bucket in cloudflare. Enter the index.ts file and change the following
 ---
 import * as pulumi from "@pulumi/pulumi";
+
 import * as cloudflare from "@pulumi/cloudflare";
 
 // Replace this with your actual Cloudflare account ID
+
 const accountId = "your-cloudflare-account-id";
 
 // Create an R2 bucket
+
 const myBucket = new cloudflare.R2Bucket("my-bucket", {
+
     accountId: accountId,
+
     name: "infrastructure_bucket", // the name is important, it has to be all lowercase and have a "-"
+
 });
 
+
 // Export the bucket name
+
 export const bucketName = myBucket.name;
 
 ---
